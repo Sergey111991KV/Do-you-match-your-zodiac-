@@ -8,27 +8,38 @@
 
 import UIKit
 
+var nameImage = ["Aquarius", "Aries", "Cancer", "Capricorn", "Gemini", "Leo", "Libra", "Pisces", "Sagittarius", "Scorpion", "Taurus", "Virgo"]
+
 class WelcomViewController: UIViewController {
     
-    var nameImage = ["Aquarius", "Aries", "Cancer", "Capricorn", "Gemini", "Leo", "Libra", "Pisces", "Sagittarius", "Scorpion", "Taurus", "Virgo"]
+    var nameImageWelcom = nameImage
     
     
     @IBOutlet var zodiacImage: [UIImageView]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateZodiacImage(image: zodiacImage)
-       
+       updateZodiacImage(image: zodiacImage)
+      
+        
     }
     
-
+    @IBAction  func unwind(_ segue: UIStoryboardSegue){
+        
+    }
+    
+    @IBAction func beginActionBtn(_ sender: UIButton) {
+        performSegue(withIdentifier: "QuestionsSegue", sender: nil)
+    }
+    
+    
     func updateZodiacImage(image: [UIImageView]){
         
         let randomIndex = Int(arc4random_uniform(UInt32(nameImage.count)))
         for images in zodiacImage{
             images.image = UIImage(named: nameImage[randomIndex])
             nameImage.remove(at: randomIndex)
-            
+            print (nameImage)
         }
     }
 
