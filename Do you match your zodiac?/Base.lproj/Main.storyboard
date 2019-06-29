@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Boh-5h-KJS">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Welcom View Controller-->
+        <scene sceneID="peW-Mw-YgY">
+            <objects>
+                <viewController id="Boh-5h-KJS" customClass="WelcomViewController" customModule="Do_you_match_your_zodiac_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1ao-bv-hYe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpj-uk-efl" customClass="UIViewWelcom" customModule="Do_you_match_your_zodiac_" customModuleProvider="target">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vpj-uk-efl" firstAttribute="top" secondItem="QVg-6d-fs5" secondAttribute="top" id="5dp-yV-OfU"/>
+                            <constraint firstItem="vpj-uk-efl" firstAttribute="leading" secondItem="QVg-6d-fs5" secondAttribute="leading" constant="20" id="hID-y4-AaF"/>
+                            <constraint firstItem="vpj-uk-efl" firstAttribute="bottom" secondItem="QVg-6d-fs5" secondAttribute="bottom" id="n24-jq-vmF"/>
+                            <constraint firstItem="QVg-6d-fs5" firstAttribute="trailing" secondItem="vpj-uk-efl" secondAttribute="trailing" constant="20" id="xoJ-bQ-ihu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QVg-6d-fs5"/>
+                    </view>
+                    <connections>
+                        <segue destination="PTr-3e-Le7" kind="show" id="wSN-2M-yS9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EqY-zk-IJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134.78260869565219" y="128.57142857142856"/>
+        </scene>
+        <!--Questions View Controller-->
+        <scene sceneID="mip-TI-ofG">
+            <objects>
+                <viewController id="F82-QH-PDY" customClass="QuestionsViewController" customModule="Do_you_match_your_zodiac_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BNT-MX-aMZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="212-oN-hgl"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="E5Q-bT-iT9"/>
+                    <connections>
+                        <segue destination="MAr-9m-gaD" kind="show" id="T91-dE-KCy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfy-km-hxL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2124.6376811594205" y="128.57142857142856"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="Am5-o0-3CB">
+            <objects>
+                <viewController id="MAr-9m-gaD" customClass="ResultViewController" customModule="Do_you_match_your_zodiac_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V5a-DS-cEs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Vdv-tL-6Tp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQh-wu-bZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3203" y="129"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XFI-qa-BAM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PTr-3e-Le7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rKo-Ec-dW3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="F82-QH-PDY" kind="relationship" relationship="rootViewController" id="ccI-y4-FT3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hsi-fZ-pvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1213.0434782608697" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+</document>
