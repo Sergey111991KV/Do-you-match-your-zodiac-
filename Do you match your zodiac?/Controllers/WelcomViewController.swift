@@ -13,7 +13,7 @@ var nameImage = ["Aquarius", "Aries", "Cancer", "Capricorn", "Gemini", "Leo", "L
 class WelcomViewController: UIViewController {
     
     var nameImageWelcom = nameImage
-    
+   
     
     @IBOutlet var zodiacImage: [UIImageView]!
     
@@ -35,12 +35,18 @@ class WelcomViewController: UIViewController {
     
     func updateZodiacImage(image: [UIImageView]){
         
-        let randomIndex = Int(arc4random_uniform(UInt32(nameImage.count)))
+       
+      
         for images in zodiacImage{
-            images.image = UIImage(named: nameImage[randomIndex])
-            nameImage.remove(at: randomIndex)
-            print (nameImage)
-        }
-    }
+            let randomIndex = Int(arc4random_uniform(UInt32(nameImageWelcom.count)))
+            images.image = UIImage(named: nameImageWelcom[randomIndex])
+            nameImageWelcom.remove(at: randomIndex)
+            
+            print (nameImageWelcom)
+            print (randomIndex)
+                        }
+                    }
+    
 
 }
+//был баг в коде - по поводу массивов и рандомных значений, из-за этого выкидывало

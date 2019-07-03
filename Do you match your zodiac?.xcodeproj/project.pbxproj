@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C810DD122CC9978004EC842 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C810DD022CC9978004EC842 /* Questions.swift */; };
+		1C810DD322CC9989004EC842 /* Answers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C810DD222CC9989004EC842 /* Answers.swift */; };
+		1C810DD522CC9AD9004EC842 /* ZodiacType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C810DD422CC9AD9004EC842 /* ZodiacType.swift */; };
 		1C8FBB0822C7085600C83221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8FBB0722C7085600C83221 /* AppDelegate.swift */; };
 		1C8FBB0D22C7085600C83221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C8FBB0B22C7085600C83221 /* Main.storyboard */; };
 		1C8FBB0F22C7085700C83221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C8FBB0E22C7085700C83221 /* Assets.xcassets */; };
@@ -17,12 +20,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C810DD022CC9978004EC842 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		1C810DD222CC9989004EC842 /* Answers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answers.swift; sourceTree = "<group>"; };
+		1C810DD422CC9AD9004EC842 /* ZodiacType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacType.swift; sourceTree = "<group>"; };
 		1C8FBB0422C7085500C83221 /* Do you match your zodiac?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Do you match your zodiac?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C8FBB0722C7085600C83221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C8FBB0C22C7085600C83221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1C8FBB0E22C7085700C83221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C8FBB1122C7085700C83221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1C8FBB1322C7085700C83221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C8FBB1322C7085700C83221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = App/Info.plist; sourceTree = "<group>"; };
 		1C8FBB1B22C70B4100C83221 /* WelcomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
 		1C8FBB1D22C70B5300C83221 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		1C8FBB1F22C70B6100C83221 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +45,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C810DCC22CC988C004EC842 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1C8FBB0722C7085600C83221 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1C810DCD22CC98AC004EC842 /* Resourse */ = {
+			isa = PBXGroup;
+			children = (
+				1C8FBB0E22C7085700C83221 /* Assets.xcassets */,
+			);
+			path = Resourse;
+			sourceTree = "<group>";
+		};
+		1C810DCE22CC98C6004EC842 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1C810DD222CC9989004EC842 /* Answers.swift */,
+				1C810DD022CC9978004EC842 /* Questions.swift */,
+				1C810DD422CC9AD9004EC842 /* ZodiacType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1C810DCF22CC9912004EC842 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1C8FBB0B22C7085600C83221 /* Main.storyboard */,
+				1C8FBB1022C7085700C83221 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		1C8FBAFB22C7085500C83221 = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +99,11 @@
 		1C8FBB0622C7085500C83221 /* Do you match your zodiac? */ = {
 			isa = PBXGroup;
 			children = (
+				1C810DCF22CC9912004EC842 /* Storyboard */,
+				1C810DCC22CC988C004EC842 /* App */,
 				1C8FBB2122C70B7000C83221 /* Controllers */,
-				1C8FBB0722C7085600C83221 /* AppDelegate.swift */,
-				1C8FBB0B22C7085600C83221 /* Main.storyboard */,
-				1C8FBB0E22C7085700C83221 /* Assets.xcassets */,
-				1C8FBB1022C7085700C83221 /* LaunchScreen.storyboard */,
+				1C810DCD22CC98AC004EC842 /* Resourse */,
+				1C810DCE22CC98C6004EC842 /* Models */,
 				1C8FBB1322C7085700C83221 /* Info.plist */,
 			);
 			path = "Do you match your zodiac?";
@@ -150,9 +191,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C8FBB2022C70B6100C83221 /* ResultViewController.swift in Sources */,
+				1C810DD322CC9989004EC842 /* Answers.swift in Sources */,
 				1C8FBB0822C7085600C83221 /* AppDelegate.swift in Sources */,
 				1C8FBB1E22C70B5300C83221 /* QuestionsViewController.swift in Sources */,
+				1C810DD122CC9978004EC842 /* Questions.swift in Sources */,
 				1C8FBB1C22C70B4100C83221 /* WelcomViewController.swift in Sources */,
+				1C810DD522CC9AD9004EC842 /* ZodiacType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

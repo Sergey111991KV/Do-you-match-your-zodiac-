@@ -20,6 +20,11 @@ class QuestionsViewController: UIViewController {
     
     @IBOutlet weak var multipleStackView: UIStackView!
     
+    @IBOutlet weak var imageStackView: UIStackView!
+    
+    @IBOutlet var collectionQuestionsImage: [UIImageView]!
+    
+    
     var currentQuestions = 0
     
     override func viewDidLoad() {
@@ -34,6 +39,7 @@ class QuestionsViewController: UIViewController {
         singleStackView.isHidden = true
         multipleStackView.isHidden = true
         rangeStackView.isHidden = true
+        imageStackView.isHidden = true
     }
     
     @IBAction func resultsButtonOressed(_ sender: UIBarButtonItem) {
@@ -47,6 +53,8 @@ class QuestionsViewController: UIViewController {
             multipleStackView.isHidden = false
         case 2:
             rangeStackView.isHidden = false
+        case 3:
+            imageStackView.isHidden = false
         default:
             performSegue(withIdentifier: "ResultSegue", sender: nil)
         }
@@ -55,6 +63,17 @@ class QuestionsViewController: UIViewController {
         currentQuestions += 1
     }
     
-   
-
+    func updateZodiacImage(image: [UIImageView]){
+        
+        
+        
+        for images in collectionQuestionsImage{
+            let randomIndex = Int(arc4random_uniform(UInt32(nameImage.count)))
+            images.image = UIImage(named: nameImage[randomIndex])
+        
+            
+            print (nameImage)
+            print (randomIndex)
+        }
+    }
 }

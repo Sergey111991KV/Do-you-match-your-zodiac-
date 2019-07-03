@@ -110,6 +110,37 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Uh-Zz-5oE">
                                 <rect key="frame" x="32" y="536" width="256" height="2"/>
                             </progressView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ack-Fl-gpW">
+                                <rect key="frame" x="22" y="238.5" width="276" height="155"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="ZRh-vG-Mwz">
+                                        <rect key="frame" x="0.0" y="0.0" width="276" height="67.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HHf-Ad-BZv">
+                                                <rect key="frame" x="0.0" y="0.0" width="121" height="67.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DVx-hd-YAS">
+                                                <rect key="frame" x="155" y="0.0" width="121" height="67.5"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="tMf-4a-ges">
+                                        <rect key="frame" x="0.0" y="87.5" width="276" height="67.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4qw-lG-GtD">
+                                                <rect key="frame" x="0.0" y="0.0" width="121" height="67.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HCB-0e-Qqi">
+                                                <rect key="frame" x="155" y="0.0" width="121" height="67.5"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="750" constant="800" id="1GH-oo-pgh"/>
+                                    <constraint firstAttribute="width" secondItem="ack-Fl-gpW" secondAttribute="height" multiplier="16:9" id="f4W-Ie-6Vx"/>
+                                </constraints>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="b9L-a1-ILA">
                                 <rect key="frame" x="20" y="162" width="280" height="208.5"/>
                                 <subviews>
@@ -298,23 +329,37 @@
                             <constraint firstItem="s8t-T6-aVW" firstAttribute="leading" secondItem="212-oN-hgl" secondAttribute="leading" constant="20" id="2zK-gN-bGd"/>
                             <constraint firstItem="b9L-a1-ILA" firstAttribute="leading" secondItem="212-oN-hgl" secondAttribute="leading" constant="20" id="7ES-3d-r30"/>
                             <constraint firstItem="212-oN-hgl" firstAttribute="bottom" secondItem="3Uh-Zz-5oE" secondAttribute="bottom" constant="30" id="7eU-O6-tME"/>
+                            <constraint firstItem="212-oN-hgl" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ack-Fl-gpW" secondAttribute="trailing" constant="22" id="DJb-9J-wPL"/>
                             <constraint firstItem="b9L-a1-ILA" firstAttribute="top" secondItem="N89-VC-Bkm" secondAttribute="bottom" constant="57.5" id="FO7-yb-eXp"/>
                             <constraint firstItem="212-oN-hgl" firstAttribute="trailing" secondItem="b9L-a1-ILA" secondAttribute="trailing" constant="20" id="GYS-Cm-hUx"/>
                             <constraint firstItem="M23-aa-836" firstAttribute="centerX" secondItem="BNT-MX-aMZ" secondAttribute="centerX" id="Gvg-9V-Pgq"/>
                             <constraint firstItem="3Uh-Zz-5oE" firstAttribute="top" relation="lessThanOrEqual" secondItem="s8t-T6-aVW" secondAttribute="bottom" constant="133" id="HZF-OP-GtK"/>
                             <constraint firstItem="N89-VC-Bkm" firstAttribute="top" secondItem="212-oN-hgl" secondAttribute="top" constant="20" id="Ou3-Mx-Pln"/>
+                            <constraint firstItem="ack-Fl-gpW" firstAttribute="centerY" secondItem="212-oN-hgl" secondAttribute="centerY" id="OuP-bF-q9j"/>
                             <constraint firstItem="N89-VC-Bkm" firstAttribute="leading" secondItem="212-oN-hgl" secondAttribute="leading" constant="16" id="QOF-mc-wPH"/>
                             <constraint firstItem="3Uh-Zz-5oE" firstAttribute="top" relation="lessThanOrEqual" secondItem="b9L-a1-ILA" secondAttribute="bottom" constant="165.5" id="S4s-gR-k23"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3Uh-Zz-5oE" secondAttribute="trailing" constant="16" id="XuA-Xa-h1m"/>
                             <constraint firstItem="212-oN-hgl" firstAttribute="trailing" secondItem="s8t-T6-aVW" secondAttribute="trailing" constant="20" id="YMa-dL-tHs"/>
                             <constraint firstItem="s8t-T6-aVW" firstAttribute="top" secondItem="N89-VC-Bkm" secondAttribute="bottom" constant="30" id="ZGE-sa-BhJ"/>
+                            <constraint firstItem="3Uh-Zz-5oE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ack-Fl-gpW" secondAttribute="bottom" constant="48" id="ZsM-c1-fxg"/>
                             <constraint firstItem="3Uh-Zz-5oE" firstAttribute="leading" secondItem="BNT-MX-aMZ" secondAttribute="leadingMargin" constant="16" id="d2s-Ue-3fW"/>
                             <constraint firstItem="212-oN-hgl" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="M23-aa-836" secondAttribute="trailing" constant="56" id="hWJ-Xh-TC3"/>
+                            <constraint firstItem="ack-Fl-gpW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="212-oN-hgl" secondAttribute="leading" constant="22" id="nX7-F6-MD1"/>
                             <constraint firstItem="M23-aa-836" firstAttribute="leading" relation="lessThanOrEqual" secondItem="212-oN-hgl" secondAttribute="leading" constant="50" id="qHT-U5-IPV"/>
                             <constraint firstItem="M23-aa-836" firstAttribute="top" secondItem="N89-VC-Bkm" secondAttribute="bottom" constant="40" id="uKX-uV-8t5"/>
                             <constraint firstItem="212-oN-hgl" firstAttribute="trailing" secondItem="N89-VC-Bkm" secondAttribute="trailing" constant="16" id="wsk-By-QTb"/>
+                            <constraint firstItem="ack-Fl-gpW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="N89-VC-Bkm" secondAttribute="bottom" constant="17.5" id="yBX-f7-ROB"/>
+                            <constraint firstItem="ack-Fl-gpW" firstAttribute="centerX" secondItem="212-oN-hgl" secondAttribute="centerX" id="zCK-cV-fsd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="212-oN-hgl"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ack-Fl-gpW"/>
+                                <exclude reference="b9L-a1-ILA"/>
+                                <exclude reference="M23-aa-836"/>
+                                <exclude reference="s8t-T6-aVW"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Questions 1  of 3" id="E5Q-bT-iT9">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="zua-84-5OF">
@@ -324,11 +369,16 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="imageStackView" destination="ack-Fl-gpW" id="s7f-Gt-aw9"/>
                         <outlet property="multipleStackView" destination="s8t-T6-aVW" id="srh-fX-zi3"/>
                         <outlet property="progressView" destination="3Uh-Zz-5oE" id="1PD-Rw-ne4"/>
                         <outlet property="questionLabel" destination="N89-VC-Bkm" id="UJu-id-WUw"/>
                         <outlet property="rangeStackView" destination="b9L-a1-ILA" id="GAo-LV-V9P"/>
                         <outlet property="singleStackView" destination="M23-aa-836" id="nAB-Nn-apk"/>
+                        <outletCollection property="collectionQuestionsImage" destination="HHf-Ad-BZv" collectionClass="NSMutableArray" id="jgz-27-cWZ"/>
+                        <outletCollection property="collectionQuestionsImage" destination="DVx-hd-YAS" collectionClass="NSMutableArray" id="b4c-qc-Pyl"/>
+                        <outletCollection property="collectionQuestionsImage" destination="4qw-lG-GtD" collectionClass="NSMutableArray" id="Vn7-Tk-xba"/>
+                        <outletCollection property="collectionQuestionsImage" destination="HCB-0e-Qqi" collectionClass="NSMutableArray" id="bI4-kj-qFb"/>
                         <segue destination="MAr-9m-gaD" kind="show" identifier="ResultSegue" id="T91-dE-KCy"/>
                     </connections>
                 </viewController>
