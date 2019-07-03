@@ -15,29 +15,75 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var progressView: UIProgressView!
     
     @IBOutlet weak var rangeStackView: UIStackView!
+    @IBOutlet var rangeLabels: [UILabel]!
+    @IBOutlet weak var rangrSlider: UISlider!
+    
     
     @IBOutlet weak var singleStackView: UIStackView!
+    @IBOutlet var buttonsSingle: [UIButton]!
+    
     
     @IBOutlet weak var multipleStackView: UIStackView!
+    @IBOutlet var labelMultiple: [UILabel]!
+    
+    
+    
     
     @IBOutlet weak var imageStackView: UIStackView!
-    
     @IBOutlet var collectionQuestionsImage: [UIImageView]!
     
     
-    var answerGroup = 
+    func  updateGroup(){
+        
+        if questionsIndex < 5{
+          var answersChosen = [Answer]()
+        }else{
+            if questionsIndex
+        }
+    }
+    
+    func updateQuestions(){
+        let answer = answersChosen
+        
+    }
     
     
+    var answersChosen = [Question, QuestionFirst]
+    var questionIndex = 0
+    var questions = [Any]()
     
     
+    var questionsGroup: [Question]!
+    var questionsFirst: [QuestionFirst]!
+    var questionsSecond: [QuestionSecond]!
+    var questionsThird: [QuestionThird]!
     
-    var currentQuestions = 0
+    var currentQuestion: Question {
+        return questions[questionIndex]
+    }
+    
+    var currentAnswers: [Answer] {
+        return currentQuestion.answers
+    }
+    
+    // MARK: - UIViewController Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        questions = Question.all
+        updateUI()
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateZodiacImage(image: collectionQuestionsImage)
         updateUI()
-      
+        questions = Question.group
+        questionsFirst = QuestionFirst.type
+        questionsSecond = QuestionSecond.type
+        questionsThird = QuestionThird.type
+        
     }
     
     func updateUI(){
@@ -46,28 +92,65 @@ class QuestionsViewController: UIViewController {
         multipleStackView.isHidden = true
         rangeStackView.isHidden = true
         imageStackView.isHidden = true
+        
+        let progressGroup = Float(questionsGroupIndex) / Float(questions.count)
+        let progressType = Float(questionsGroupIndex) / Float(questions.count)
+        
+        
+        
+    
+    
+    navigationItem.title = "Вопрос № \(questionsGroupIndex + 1) из \(questions.count)"
+        questionLabel.text = currentGroupQuestion.text
+        progressView.setProgress(progressGroup, animated: true)
+    
+    
+        switch currentGroupQuestion.type {
+            
+        case .single:
+            updateSingleStack(with: currentGroupAnswers)
+            
+        case .multiple:
+            updateMultipleStack(with: currentGroupAnswers)
+            
+        case .ranged:
+            updateRangedStack(with: currentGroupAnswers)
+            
+        case .image:
+        updateRangedStack(with: currentGroupAnswers)
     }
+}
     
-    @IBAction func resultsButtonOressed(_ sender: UIBarButtonItem) {
-    
-        updateUI()
-    
-        switch currentQuestions {
-        case 0:
-            singleStackView.isHidden = false
-        case 1:
-            multipleStackView.isHidden = false
-        case 2:
-            rangeStackView.isHidden = false
-        case 3:
-            imageStackView.isHidden = false
-        default:
-            performSegue(withIdentifier: "ResultSegue", sender: nil)
+    func updateSingleStack(with answers: [Answer]) {
+        singleStackView.isHidden = false
+        for (button, answer) in zip(singleButtons, answers) {
+            button.setTitle(answer.text, for: [])
         }
-        
-        
-        currentQuestions += 1
     }
+    
+    
+    func updateMultipleStack(with answers: [Answer]) {
+        multipleStackView.isHidden = false
+        for (label, answer) in zip(multiLabels, answers) {
+            label.text = answer.text
+        }
+    }
+    
+    func updateRangedStack(with answers: [Answer]) {
+        rangedLabels.first?.text = answers.first?.text
+        rangedLabels.last?.text = answers.last?.text
+        rangeStackView.isHidden = false
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     func updateZodiacImage(image: [UIImageView]){
         

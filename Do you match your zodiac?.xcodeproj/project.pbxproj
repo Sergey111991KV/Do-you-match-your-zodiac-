@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		1C02AB6922CCB10B00D715F3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C02AB6822CCB10B00D715F3 /* Default-568h@2x.png */; };
 		1C2D34E122CCB2B80016A55B /* ResponceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D34E022CCB2B80016A55B /* ResponceType.swift */; };
-		1C2D34E422CCB48D0016A55B /* AnswerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D34E322CCB48D0016A55B /* AnswerGroup.swift */; };
-		1C2D34E622CCB5180016A55B /* zodiacGrup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D34E522CCB5180016A55B /* zodiacGrup.swift */; };
-		1C2D34EA22CCBFEB0016A55B /* zodiacType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D34E922CCBFEB0016A55B /* zodiacType.swift */; };
+		1C2D34E422CCB48D0016A55B /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D34E322CCB48D0016A55B /* Answer.swift */; };
+		1C2D34E622CCB5180016A55B /* ZodiacGrup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D34E522CCB5180016A55B /* ZodiacGrup.swift */; };
+		1C2D34EA22CCBFEB0016A55B /* ZodiacType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D34E922CCBFEB0016A55B /* ZodiacType.swift */; };
 		1C2D34EC22CCC3D80016A55B /* AnswerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D34EB22CCC3D80016A55B /* AnswerType.swift */; };
 		1C2D34EE22CCC4C10016A55B /* QuestionFirs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D34ED22CCC4C10016A55B /* QuestionFirs.swift */; };
 		1C2D34F022CCC4D40016A55B /* QuestionSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D34EF22CCC4D40016A55B /* QuestionSecond.swift */; };
 		1C2D34F222CCC4ED0016A55B /* QuestionThird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D34F122CCC4ED0016A55B /* QuestionThird.swift */; };
+		1C2D34F422CCEF500016A55B /* TypeQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D34F322CCEF500016A55B /* TypeQuestions.swift */; };
 		1C810DD122CC9978004EC842 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C810DD022CC9978004EC842 /* Question.swift */; };
 		1C8FBB0822C7085600C83221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8FBB0722C7085600C83221 /* AppDelegate.swift */; };
 		1C8FBB0D22C7085600C83221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C8FBB0B22C7085600C83221 /* Main.storyboard */; };
@@ -29,13 +30,14 @@
 /* Begin PBXFileReference section */
 		1C02AB6822CCB10B00D715F3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1C2D34E022CCB2B80016A55B /* ResponceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponceType.swift; sourceTree = "<group>"; };
-		1C2D34E322CCB48D0016A55B /* AnswerGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnswerGroup.swift; path = ../../AnswerGroup.swift; sourceTree = "<group>"; };
-		1C2D34E522CCB5180016A55B /* zodiacGrup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zodiacGrup.swift; sourceTree = "<group>"; };
-		1C2D34E922CCBFEB0016A55B /* zodiacType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zodiacType.swift; sourceTree = "<group>"; };
+		1C2D34E322CCB48D0016A55B /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Answer.swift; path = ../../Answer.swift; sourceTree = "<group>"; };
+		1C2D34E522CCB5180016A55B /* ZodiacGrup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacGrup.swift; sourceTree = "<group>"; };
+		1C2D34E922CCBFEB0016A55B /* ZodiacType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacType.swift; sourceTree = "<group>"; };
 		1C2D34EB22CCC3D80016A55B /* AnswerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerType.swift; sourceTree = "<group>"; };
 		1C2D34ED22CCC4C10016A55B /* QuestionFirs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionFirs.swift; sourceTree = "<group>"; };
 		1C2D34EF22CCC4D40016A55B /* QuestionSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSecond.swift; sourceTree = "<group>"; };
 		1C2D34F122CCC4ED0016A55B /* QuestionThird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionThird.swift; sourceTree = "<group>"; };
+		1C2D34F322CCEF500016A55B /* TypeQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeQuestions.swift; sourceTree = "<group>"; };
 		1C810DD022CC9978004EC842 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		1C8FBB0422C7085500C83221 /* Do you match your zodiac?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Do you match your zodiac?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C8FBB0722C7085600C83221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,12 +80,16 @@
 		1C810DCE22CC98C6004EC842 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1C2D34E922CCBFEB0016A55B /* zodiacType.swift */,
-				1C2D34E522CCB5180016A55B /* zodiacGrup.swift */,
+				1C2D34E922CCBFEB0016A55B /* ZodiacType.swift */,
+				1C2D34E522CCB5180016A55B /* ZodiacGrup.swift */,
 				1C2D34EB22CCC3D80016A55B /* AnswerType.swift */,
-				1C2D34E322CCB48D0016A55B /* AnswerGroup.swift */,
+				1C2D34E322CCB48D0016A55B /* Answer.swift */,
 				1C2D34E022CCB2B80016A55B /* ResponceType.swift */,
 				1C810DD022CC9978004EC842 /* Question.swift */,
+				1C2D34ED22CCC4C10016A55B /* QuestionFirs.swift */,
+				1C2D34EF22CCC4D40016A55B /* QuestionSecond.swift */,
+				1C2D34F122CCC4ED0016A55B /* QuestionThird.swift */,
+				1C2D34F322CCEF500016A55B /* TypeQuestions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -100,9 +106,6 @@
 		1C8FBAFB22C7085500C83221 = {
 			isa = PBXGroup;
 			children = (
-				1C2D34F122CCC4ED0016A55B /* QuestionThird.swift */,
-				1C2D34EF22CCC4D40016A55B /* QuestionSecond.swift */,
-				1C2D34ED22CCC4C10016A55B /* QuestionFirs.swift */,
 				1C02AB6822CCB10B00D715F3 /* Default-568h@2x.png */,
 				1C8FBB0622C7085500C83221 /* Do you match your zodiac? */,
 				1C8FBB0522C7085500C83221 /* Products */,
@@ -213,17 +216,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C8FBB2022C70B6100C83221 /* ResultViewController.swift in Sources */,
-				1C2D34EA22CCBFEB0016A55B /* zodiacType.swift in Sources */,
+				1C2D34EA22CCBFEB0016A55B /* ZodiacType.swift in Sources */,
 				1C8FBB0822C7085600C83221 /* AppDelegate.swift in Sources */,
+				1C2D34F422CCEF500016A55B /* TypeQuestions.swift in Sources */,
 				1C2D34F022CCC4D40016A55B /* QuestionSecond.swift in Sources */,
 				1C8FBB1E22C70B5300C83221 /* QuestionsViewController.swift in Sources */,
 				1C810DD122CC9978004EC842 /* Question.swift in Sources */,
 				1C2D34EC22CCC3D80016A55B /* AnswerType.swift in Sources */,
 				1C2D34EE22CCC4C10016A55B /* QuestionFirs.swift in Sources */,
 				1C8FBB1C22C70B4100C83221 /* WelcomViewController.swift in Sources */,
-				1C2D34E422CCB48D0016A55B /* AnswerGroup.swift in Sources */,
+				1C2D34E422CCB48D0016A55B /* Answer.swift in Sources */,
 				1C2D34F222CCC4ED0016A55B /* QuestionThird.swift in Sources */,
-				1C2D34E622CCB5180016A55B /* zodiacGrup.swift in Sources */,
+				1C2D34E622CCB5180016A55B /* ZodiacGrup.swift in Sources */,
 				1C2D34E122CCB2B80016A55B /* ResponceType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

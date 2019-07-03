@@ -6,11 +6,15 @@
 //  Copyright © 2019 Сергей Косилов. All rights reserved.
 //
 
-enum ZodiacGrup: String {
+enum ZodiacGrup  {
    
-    case firstGrup = "firstGrup"
-    case secondGroup = "secondGroup"
-    case  thirdGroup = "thirdGroup"
-    case all = "all"
+    case firstGrup
+    case secondGroup
+    case  thirdGroup
+    case all
     
+    
+    enum tipe{
+        case dd
+    }
 }

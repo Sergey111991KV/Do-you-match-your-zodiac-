@@ -353,24 +353,29 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="212-oN-hgl"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Questions 1  of 3" id="E5Q-bT-iT9">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="zua-84-5OF">
-                            <connections>
-                                <action selector="resultsButtonOressed:" destination="F82-QH-PDY" id="Ogw-GZ-rFf"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Questions 1  of 3" id="E5Q-bT-iT9"/>
                     <connections>
                         <outlet property="imageStackView" destination="ack-Fl-gpW" id="s7f-Gt-aw9"/>
                         <outlet property="multipleStackView" destination="s8t-T6-aVW" id="srh-fX-zi3"/>
                         <outlet property="progressView" destination="3Uh-Zz-5oE" id="1PD-Rw-ne4"/>
                         <outlet property="questionLabel" destination="N89-VC-Bkm" id="UJu-id-WUw"/>
                         <outlet property="rangeStackView" destination="b9L-a1-ILA" id="GAo-LV-V9P"/>
+                        <outlet property="rangrSlider" destination="CqJ-wm-b5R" id="bFU-UT-aFT"/>
                         <outlet property="singleStackView" destination="M23-aa-836" id="nAB-Nn-apk"/>
                         <outletCollection property="collectionQuestionsImage" destination="HHf-Ad-BZv" collectionClass="NSMutableArray" id="jgz-27-cWZ"/>
                         <outletCollection property="collectionQuestionsImage" destination="DVx-hd-YAS" collectionClass="NSMutableArray" id="b4c-qc-Pyl"/>
                         <outletCollection property="collectionQuestionsImage" destination="4qw-lG-GtD" collectionClass="NSMutableArray" id="Vn7-Tk-xba"/>
                         <outletCollection property="collectionQuestionsImage" destination="HCB-0e-Qqi" collectionClass="NSMutableArray" id="bI4-kj-qFb"/>
+                        <outletCollection property="rangeLabels" destination="3Ht-gM-1cJ" collectionClass="NSMutableArray" id="ZXy-jB-LK5"/>
+                        <outletCollection property="rangeLabels" destination="j6g-sW-mwb" collectionClass="NSMutableArray" id="BOm-q5-NR8"/>
+                        <outletCollection property="buttonsSingle" destination="qHN-bG-7pL" collectionClass="NSMutableArray" id="0Ri-BS-Jiv"/>
+                        <outletCollection property="buttonsSingle" destination="ddS-cL-SRl" collectionClass="NSMutableArray" id="XyR-dR-RJO"/>
+                        <outletCollection property="buttonsSingle" destination="d8f-ph-TLH" collectionClass="NSMutableArray" id="PhF-TC-8g5"/>
+                        <outletCollection property="buttonsSingle" destination="Wge-aa-tYV" collectionClass="NSMutableArray" id="3Pa-y9-ef0"/>
+                        <outletCollection property="labelMultiple" destination="UAE-Mp-LUt" collectionClass="NSMutableArray" id="lpD-mP-hSg"/>
+                        <outletCollection property="labelMultiple" destination="1kb-Vo-5nE" collectionClass="NSMutableArray" id="ziV-WN-eNR"/>
+                        <outletCollection property="labelMultiple" destination="V91-RW-FHv" collectionClass="NSMutableArray" id="3i6-rB-RMI"/>
+                        <outletCollection property="labelMultiple" destination="gK5-IL-r42" collectionClass="NSMutableArray" id="rqC-SI-CJq"/>
                         <segue destination="MAr-9m-gaD" kind="show" identifier="ResultSegue" id="T91-dE-KCy"/>
                     </connections>
                 </viewController>

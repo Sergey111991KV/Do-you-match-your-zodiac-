@@ -6,4 +6,9 @@
 //  Copyright © 2019 Сергей Косилов. All rights reserved.
 //
 
-import Foundation
+
+
+struct AnswerType {
+    var text: String
+    var type: ZodiacType
+}
