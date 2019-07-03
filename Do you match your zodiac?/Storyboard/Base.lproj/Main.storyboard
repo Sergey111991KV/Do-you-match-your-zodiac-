@@ -352,14 +352,6 @@
                             <constraint firstItem="ack-Fl-gpW" firstAttribute="centerX" secondItem="212-oN-hgl" secondAttribute="centerX" id="zCK-cV-fsd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="212-oN-hgl"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="ack-Fl-gpW"/>
-                                <exclude reference="b9L-a1-ILA"/>
-                                <exclude reference="M23-aa-836"/>
-                                <exclude reference="s8t-T6-aVW"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Questions 1  of 3" id="E5Q-bT-iT9">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="zua-84-5OF">

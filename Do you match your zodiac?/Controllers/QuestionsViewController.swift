@@ -25,11 +25,17 @@ class QuestionsViewController: UIViewController {
     @IBOutlet var collectionQuestionsImage: [UIImageView]!
     
     
+    var answerGroup = 
+    
+    
+    
+    
+    
     var currentQuestions = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateZodiacImage(image: collectionQuestionsImage)
         updateUI()
       
     }
