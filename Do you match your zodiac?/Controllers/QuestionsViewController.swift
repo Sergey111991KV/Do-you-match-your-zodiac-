@@ -9,12 +9,13 @@
 import UIKit
 
 
-
+//MARK: NameImagt
 let nameImageForStackView = [ "просточтото", "группа1", "изумруд", "сердце", "амметист", "арагонит", "бирюза", "гранат", "дудл", "конус", "лал", "рубин", "сапфир", "хризолит", "шпинель"]
 
 
 class QuestionsViewController: UIViewController {
 
+    // MARK: Outlets
     @IBOutlet weak var questionLabel: UILabel!
     
     @IBOutlet weak var progressView: UIProgressView!
@@ -23,22 +24,17 @@ class QuestionsViewController: UIViewController {
     @IBOutlet var rangeLabels: [UILabel]!
     @IBOutlet weak var rangrSlider: UISlider!
     
-    
     @IBOutlet weak var singleStackView: UIStackView!
     @IBOutlet var buttonsSingle: [UIButton]!
     
-    
     @IBOutlet weak var multipleStackView: UIStackView!
     @IBOutlet var labelMultiple: [UILabel]!
-    
-    
-    
     
     @IBOutlet weak var imageStackView: UIStackView!
     @IBOutlet var collectionQuestionsImage: [UIImageView]!
     
     
-    
+    // MARK: - Properties
     var responseAnswer = [Answer]()
     var currentTitle = 1
     var answersChosen = [Answer]()
@@ -50,7 +46,6 @@ class QuestionsViewController: UIViewController {
         let v = questions[questionsGroupIndex]
         let question = v[questionsCurrentIndex]
         return question
-        
     }
     
     var currentAnswers: [Answer] {
@@ -58,23 +53,17 @@ class QuestionsViewController: UIViewController {
     }
     
     
-    
-    override func viewDidLoad() {
+     // MARK: - UIViewController Methods
+        override func viewDidLoad() {
         super.viewDidLoad()
         questions = Question.all
         updateUI()
+        print(answersChosen.count)
+        print(responseAnswer.count)
     }
     
-    
-    
-    
-    
 
-    
- 
-    
-    
-    
+     // MARK: - Custom Methods
     func updateUI(){
         
         singleStackView.isHidden = true
@@ -183,29 +172,30 @@ class QuestionsViewController: UIViewController {
         default:
             questionsGroupIndex = 3 //  здесь можно сделать дополнительные вопросы, но опять же
             questionsCurrentIndex = 0
-            
         }
-        
-        
     }
+        func createResponderAnswer(_answer: Answer){
+            if questionsGroupIndex == 0{
+                answersChosen.append(_answer)
+            }else{
+                responseAnswer.append(_answer)
+                
+            }
+        }
     
     
+      // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "ResultSegue" else { return }
         let destination = segue.destination as! ResultViewController
         destination.responses = responseAnswer
         destination.grup = questionsGroupIndex
-        
+        responseAnswer.removeAll()
+        answersChosen.removeAll()
     }
     
 
-    
-    
-
-    
-    
-    
-    
+     // MARK: - Actions
     @IBAction func singleButtonPressed(_ sender: UIButton) {
         guard let answerIndex = buttonsSingle.firstIndex(of: sender) else { return }
         let answer = currentAnswers[answerIndex]
@@ -274,32 +264,10 @@ class QuestionsViewController: UIViewController {
         nextQuestion()
     }
     
-    
-    func createResponderAnswer(_answer: Answer){
-        if questionsGroupIndex == 0{
-            answersChosen.append(_answer)
-        }else{
-            responseAnswer.append(_answer)
-            
-        }
-        
-    }
+  
     
     
-    
-    
-//    func updateZodiacImage(image: [UIImageView]){
-//
-//
-//
-//        for images in collectionQuestionsImage{
-//            let randomIndex = Int(arc4random_uniform(UInt32(nameImage.count)))
-//            images.image = UIImage(named: nameImage[randomIndex])
-//
-//
-//            print (nameImage)
-//            print (randomIndex)
-//        }
-//    }
+
 }
+
 

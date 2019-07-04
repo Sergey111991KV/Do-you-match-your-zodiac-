@@ -24,9 +24,10 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-       print(responses)
-        print(grup)
+        print(responses.count)
        calculatAnswer()
+        print(responses.count)
+        
     }
     
 
@@ -74,7 +75,7 @@ class ResultViewController: UIViewController {
             return
         }
 
-        
+        responses.removeAll()
        
         }
 }
