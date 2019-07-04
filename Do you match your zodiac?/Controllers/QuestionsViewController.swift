@@ -8,6 +8,11 @@
 
 import UIKit
 
+
+
+let nameImageForStackView = [ "просточтото", "группа1", "изумруд", "сердце", "амметист", "арагонит", "бирюза", "гранат", "дудл", "конус", "лал", "рубин", "сапфир", "хризолит", "шпинель"]
+
+
 class QuestionsViewController: UIViewController {
 
     @IBOutlet weak var questionLabel: UILabel!
@@ -33,58 +38,48 @@ class QuestionsViewController: UIViewController {
     @IBOutlet var collectionQuestionsImage: [UIImageView]!
     
     
-    func  updateGroup(){
-        
-        if questionsIndex < 5{
-          var answersChosen = [Answer]()
-        }else{
-            if questionsIndex
-        }
-    }
-    
-    func updateQuestions(){
-        let answer = answersChosen
-        
-    }
     
     
-    var answersChosen = [Question, QuestionFirst]
-    var questionIndex = 0
-    var questions = [Any]()
-    
-    
-    var questionsGroup: [Question]!
-    var questionsFirst: [QuestionFirst]!
-    var questionsSecond: [QuestionSecond]!
-    var questionsThird: [QuestionThird]!
+    var currentTitle = 1
+    var answersChosen = [Answer]()
+    var questionsGroupIndex = 0
+    var questions: [[Question]]!
+    var questionsCurrentIndex = 0
     
     var currentQuestion: Question {
-        return questions[questionIndex]
+        let v = questions[questionsGroupIndex]
+        let question = v[questionsCurrentIndex]
+        return question
+        
     }
     
     var currentAnswers: [Answer] {
-        return currentQuestion.answers
+        return currentQuestion.answer
     }
     
-    // MARK: - UIViewController Methods
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         questions = Question.all
-        updateUI()
-    }
     
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        updateZodiacImage(image: collectionQuestionsImage)
-        updateUI()
-        questions = Question.group
-        questionsFirst = QuestionFirst.type
-        questionsSecond = QuestionSecond.type
-        questionsThird = QuestionThird.type
+
         
+        
+        
+       
+        updateUI()
     }
+    
+    
+    
+    
+    
+
+    
+ 
+    
+    
     
     func updateUI(){
         
@@ -93,76 +88,216 @@ class QuestionsViewController: UIViewController {
         rangeStackView.isHidden = true
         imageStackView.isHidden = true
         
-        let progressGroup = Float(questionsGroupIndex) / Float(questions.count)
-        let progressType = Float(questionsGroupIndex) / Float(questions.count)
-        
-        
-        
+        let progress = Float(currentTitle - 1) / 8
+        //здесь нужно взять меняющуюся величину но времени нет
+       
+        navigationItem.title = "Вопрос № \(currentTitle) из \(questions.count * 2)"
+        questionLabel.text = currentQuestion.text
+       progressView.setProgress(progress, animated: true)
     
-    
-    navigationItem.title = "Вопрос № \(questionsGroupIndex + 1) из \(questions.count)"
-        questionLabel.text = currentGroupQuestion.text
-        progressView.setProgress(progressGroup, animated: true)
-    
-    
-        switch currentGroupQuestion.type {
+        switch currentQuestion.type {
             
         case .single:
-            updateSingleStack(with: currentGroupAnswers)
+            updateSingleStack(with: currentAnswers)
             
-        case .multiple:
-            updateMultipleStack(with: currentGroupAnswers)
+        case .multipe:
+            updateMultipleStack(with: currentAnswers)
             
         case .ranged:
-            updateRangedStack(with: currentGroupAnswers)
+            updateRangedStack(with: currentAnswers)
             
         case .image:
-        updateRangedStack(with: currentGroupAnswers)
-    }
+            updateImageStack(with: currentAnswers)
+        
+        }
+        print(questionsGroupIndex)
+        print(questionsCurrentIndex)
 }
+   
+    
+    
+    
     
     func updateSingleStack(with answers: [Answer]) {
         singleStackView.isHidden = false
-        for (button, answer) in zip(singleButtons, answers) {
+        for (button, answer) in zip(buttonsSingle, answers) {
             button.setTitle(answer.text, for: [])
         }
     }
-    
-    
     func updateMultipleStack(with answers: [Answer]) {
         multipleStackView.isHidden = false
-        for (label, answer) in zip(multiLabels, answers) {
+        for (label, answer) in zip(labelMultiple, answers) {
             label.text = answer.text
         }
     }
-    
     func updateRangedStack(with answers: [Answer]) {
-        rangedLabels.first?.text = answers.first?.text
-        rangedLabels.last?.text = answers.last?.text
+        rangeLabels.first?.text = answers.first?.text
+        rangeLabels.last?.text = answers.last?.text
         rangeStackView.isHidden = false
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    func updateZodiacImage(image: [UIImageView]){
-        
-        
-        
-        for images in collectionQuestionsImage{
-            let randomIndex = Int(arc4random_uniform(UInt32(nameImage.count)))
-            images.image = UIImage(named: nameImage[randomIndex])
-        
-            
-            print (nameImage)
-            print (randomIndex)
+    func updateImageStack(with answers: [Answer]) {
+        imageStackView.isHidden = false
+        for (view, answer) in zip(collectionQuestionsImage, answers){
+            view.image = UIImage(named: answer.text)
         }
     }
+
+    
+    
+    
+    
+    func nextQuestion() {
+        currentTitle += 1
+        questionsCurrentIndex += 1
+        let questionsOnBlock = questions[questionsGroupIndex]
+        if questionsCurrentIndex < questionsOnBlock.count {
+            updateUI()
+        }else{
+        if questionsCurrentIndex == questionsOnBlock.count{
+            if questionsGroupIndex == 0{
+                calculatAnswer()
+                updateUI()
+            }else{
+                performSegue(withIdentifier: "ResultSegue", sender: nil)
+                    }
+    
+                }
+        
+        }
+    }
+    
+    func calculatAnswer (){
+        let zodiacType = answersChosen.map {$0.common}
+        var zodiacCount = [Common: Int]()
+        zodiacType.forEach {zodiacType in
+        zodiacCount[zodiacType] = (zodiacCount[zodiacType] ?? 0) + 1}
+        let sortedCount = zodiacCount.sorted { $0.value > $1.value }
+        let zodiacGrup = sortedCount.first!.key
+        switch zodiacGrup {
+        case .group1:
+            questionsGroupIndex = 1
+            questionsCurrentIndex = 0
+        case .group2:
+            questionsGroupIndex = 2
+            questionsCurrentIndex = 0
+        case .group3:
+            questionsGroupIndex = 3
+            questionsCurrentIndex = 0
+        case .all:
+            questionsGroupIndex = 3 //  здесь можно сделать дополнительные вопросы, но опять же
+            questionsCurrentIndex = 0
+        default:
+            questionsGroupIndex = 3 //  здесь можно сделать дополнительные вопросы, но опять же
+            questionsCurrentIndex = 0
+            
+        }
+        
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "ResultSegue" else { return }
+        let destination = segue.destination as! ResultViewController
+        destination.responses = answersChosen
+        destination.grup = questionsGroupIndex
+        
+    }
+    
+
+    
+    
+
+    
+    
+    
+    
+    @IBAction func singleButtonPressed(_ sender: UIButton) {
+        guard let answerIndex = buttonsSingle.firstIndex(of: sender) else { return }
+        let answer = currentAnswers[answerIndex]
+        answersChosen.append(answer)
+        
+        nextQuestion()
+    }
+    
+    
+    @IBAction func multipleButtonPressed(_ sender: UIButton) {
+        for (index, view) in multipleStackView.arrangedSubviews.enumerated() {
+            guard let stackView = view as? UIStackView else { continue }
+            guard let switchView = stackView.arrangedSubviews.last as? UISwitch else { continue }
+            if switchView.isOn {
+                let answer = currentAnswers[index]
+                answersChosen.append(answer)
+            }
+        }
+        nextQuestion()
+        
+    }
+    
+    
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        let numberOfSteps = Float(currentAnswers.count - 1)
+        let step = 1 / numberOfSteps
+        let index = round(rangrSlider.value * numberOfSteps)
+        sender.value = step * index
+        
+    }
+    
+    
+    
+    @IBAction func rangedButtonPressed(_ sender: UIButton) {
+        let index = Int(round(rangrSlider.value * Float(currentAnswers.count - 1)))
+        let answer = currentAnswers[index]
+        answersChosen.append(answer)
+        nextQuestion()
+        }
+    
+    
+
+    
+    @IBAction func first(_ sender: UITapGestureRecognizer) {
+        let answer = currentAnswers[0]
+        answersChosen.append(answer)
+        nextQuestion()
+        
+    }
+    
+    @IBAction func second(_ sender: UITapGestureRecognizer) {
+        let answer = currentAnswers[1]
+        answersChosen.append(answer)
+        nextQuestion()
+    }
+    
+    @IBAction func third(_ sender: UITapGestureRecognizer) {
+        let answer = currentAnswers[2]
+        answersChosen.append(answer)
+        nextQuestion()
+    }
+    
+    @IBAction func `for`(_ sender: UITapGestureRecognizer) {
+        let answer = currentAnswers[3]
+        answersChosen.append(answer)
+        nextQuestion()
+    }
+    
+    
+    
+    
+    
+    
+    
+//    func updateZodiacImage(image: [UIImageView]){
+//
+//
+//
+//        for images in collectionQuestionsImage{
+//            let randomIndex = Int(arc4random_uniform(UInt32(nameImage.count)))
+//            images.image = UIImage(named: nameImage[randomIndex])
+//
+//
+//            print (nameImage)
+//            print (randomIndex)
+//        }
+//    }
 }
+
