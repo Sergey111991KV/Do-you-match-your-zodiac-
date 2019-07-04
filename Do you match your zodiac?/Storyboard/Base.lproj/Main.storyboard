@@ -512,7 +512,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bcQ-hY-xb7">
                                         <rect key="frame" x="0.0" y="338" width="280" height="82"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwl-75-RKE">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwl-75-RKE">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="82"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -558,6 +558,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Qwl-75-RKE" id="qAL-t7-Pzj"/>
+                        <outlet property="imageResult" destination="GQ5-SU-9Pn" id="oRI-bh-vqm"/>
+                        <outlet property="zodiacName" destination="FWo-JP-abV" id="oRb-hx-8aS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQh-wu-bZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="yEC-NT-CIW" userLabel="Exit" sceneMemberID="exit"/>

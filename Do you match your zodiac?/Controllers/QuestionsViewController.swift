@@ -39,7 +39,7 @@ class QuestionsViewController: UIViewController {
     
     
     
-    
+    var responseAnswer = [Answer]()
     var currentTitle = 1
     var answersChosen = [Answer]()
     var questionsGroupIndex = 0
@@ -215,7 +215,7 @@ class QuestionsViewController: UIViewController {
     @IBAction func singleButtonPressed(_ sender: UIButton) {
         guard let answerIndex = buttonsSingle.firstIndex(of: sender) else { return }
         let answer = currentAnswers[answerIndex]
-        answersChosen.append(answer)
+        createResponderAnswer(_answer: answer)
         
         nextQuestion()
     }
@@ -227,7 +227,7 @@ class QuestionsViewController: UIViewController {
             guard let switchView = stackView.arrangedSubviews.last as? UISwitch else { continue }
             if switchView.isOn {
                 let answer = currentAnswers[index]
-                answersChosen.append(answer)
+                createResponderAnswer(_answer: answer)
             }
         }
         nextQuestion()
@@ -248,7 +248,7 @@ class QuestionsViewController: UIViewController {
     @IBAction func rangedButtonPressed(_ sender: UIButton) {
         let index = Int(round(rangrSlider.value * Float(currentAnswers.count - 1)))
         let answer = currentAnswers[index]
-        answersChosen.append(answer)
+        createResponderAnswer(_answer: answer)
         nextQuestion()
         }
     
@@ -257,31 +257,39 @@ class QuestionsViewController: UIViewController {
     
     @IBAction func first(_ sender: UITapGestureRecognizer) {
         let answer = currentAnswers[0]
-        answersChosen.append(answer)
+        createResponderAnswer(_answer: answer)
         nextQuestion()
         
     }
     
     @IBAction func second(_ sender: UITapGestureRecognizer) {
         let answer = currentAnswers[1]
-        answersChosen.append(answer)
+        createResponderAnswer(_answer: answer)
         nextQuestion()
     }
     
     @IBAction func third(_ sender: UITapGestureRecognizer) {
         let answer = currentAnswers[2]
-        answersChosen.append(answer)
+       createResponderAnswer(_answer: answer)
         nextQuestion()
     }
     
     @IBAction func `for`(_ sender: UITapGestureRecognizer) {
         let answer = currentAnswers[3]
-        answersChosen.append(answer)
+        createResponderAnswer(_answer: answer)
         nextQuestion()
     }
     
     
-    
+    func createResponderAnswer(_answer: Answer){
+        if questionsGroupIndex == 0{
+            answersChosen.append(_answer)
+        }else{
+            responseAnswer.append(_answer)
+            
+        }
+        
+    }
     
     
     

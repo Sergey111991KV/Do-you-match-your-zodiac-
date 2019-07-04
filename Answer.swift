@@ -9,9 +9,9 @@
 struct Answer: Hashable {
     var text: String
     var common: Common
-    var group1: group1
-    var group2: group2
-    var group3: group3
+    var group1: Group1
+    var group2: Group2
+    var group3: Group3
 }
     enum Common: String {
         case group1
@@ -21,7 +21,7 @@ struct Answer: Hashable {
         case non
     }
 
-    enum group1: String {
+    enum Group1: String {
         case Aquarius = "Aquarius"
         case Aries = "Aries"
         case Cancer = "Cancer"
@@ -48,7 +48,7 @@ struct Answer: Hashable {
         }
     }
 
-    enum group2: String {
+    enum Group2: String {
         case Gemini  = "Gemini"
         case Leo = "Leo"
         case Libra = "Libra"
@@ -77,7 +77,7 @@ struct Answer: Hashable {
     }
 
 
-    enum group3: String {
+    enum Group3: String {
         case Sagittarius = "Sagittarius"
         case Scorpion = "Scorpion"
         case Taurus = "Taurus"
