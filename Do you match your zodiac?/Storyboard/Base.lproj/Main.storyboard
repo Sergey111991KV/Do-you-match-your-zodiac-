@@ -559,9 +559,9 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="descriptionLabel" destination="Qwl-75-RKE" id="qAL-t7-Pzj"/>
-                        <outlet property="imageResult" destination="GQ5-SU-9Pn" id="oRI-bh-vqm"/>
-                        <outlet property="zodiacName" destination="FWo-JP-abV" id="oRb-hx-8aS"/>
+                        <outlet property="resultDefinition" destination="Qwl-75-RKE" id="eXe-Xk-bXY"/>
+                        <outlet property="resultImage" destination="GQ5-SU-9Pn" id="VUI-tO-uaQ"/>
+                        <outlet property="resultTitle" destination="FWo-JP-abV" id="08w-yU-JkB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQh-wu-bZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>

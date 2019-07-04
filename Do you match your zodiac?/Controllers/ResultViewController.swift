@@ -10,6 +10,13 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    @IBOutlet weak var resultImage: UIImageView!
+    
+    @IBOutlet weak var resultTitle: UILabel!
+    
+    @IBOutlet weak var resultDefinition: UILabel!
+    
+    
      var responses: [Answer]!
      var grup: Int!
     
@@ -17,50 +24,57 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-       
-//        updateUI()
+       print(responses)
+        print(grup)
+       calculatAnswer()
     }
     
 
     func calculatAnswer (){
-//        
-//        var calculateResponse = responses.remove(at: 0)
-//        
-//        switch grup {
-//        case 1:
-//            <#code#>
-//        case 2:
-//        
-//        case 3:
-//            
-//            
-//            
-//        default:
-//            <#code#>
-//        }
-//
-//        let zodiacType = responses.map {$0.common}
-//        var zodiacCount = [Common: Int]()
-//        zodiacType.forEach {zodiacType in
-//            zodiacCount[zodiacType] = (zodiacCount[zodiacType] ?? 0) + 1}
-//        let sortedCount = zodiacCount.sorted { $0.value > $1.value }
-//        let zodiacGrup = sortedCount.first!.key
-//        switch zodiacGrup {
-//        case .group1:
-//            questionsGroupIndex = 1
-//            questionsCurrentIndex = 0
-//        case .group2:
-//            questionsGroupIndex = 2
-//            questionsCurrentIndex = 0
-//        case .group3:
-//            questionsGroupIndex = 3
-//            questionsCurrentIndex = 0
-//        case .all:
-//            questionsGroupIndex = 3 //  здесь можно сделать дополнительные вопросы, но опять же
-//            questionsCurrentIndex = 0
-//        default:
-//            questionsGroupIndex = 3 //  здесь можно сделать дополнительные вопросы, но опять же
-//            questionsCurrentIndex = 0
-//
+
+        
+        
+        switch grup {
+        case 1:
+            let zodiacType = responses.map {$0.group1}
+            var zodiacCount = [Group1: Int]()
+            zodiacType.forEach {zodiacType in
+                zodiacCount[zodiacType] = (zodiacCount[zodiacType] ?? 0) + 1}
+            let sortedCount = zodiacCount.sorted { $0.value > $1.value }
+            let zodiacGrup = sortedCount.first!.key
+            resultImage.image = UIImage(named: zodiacGrup.rawValue)
+            resultTitle.text = zodiacGrup.rawValue
+            resultDefinition.text = zodiacGrup.definition
+            
+        case 2:
+            
+            let zodiacType = responses.map {$0.group2}
+            var zodiacCount = [Group2: Int]()
+            zodiacType.forEach {zodiacType in
+                zodiacCount[zodiacType] = (zodiacCount[zodiacType] ?? 0) + 1}
+            let sortedCount = zodiacCount.sorted { $0.value > $1.value }
+            let zodiacGrup = sortedCount.first!.key
+            resultImage.image = UIImage(named: zodiacGrup.rawValue)
+            resultTitle.text = zodiacGrup.rawValue
+            resultDefinition.text = zodiacGrup.definition
+        
+        case 3:
+            
+            let zodiacType = responses.map {$0.group3}
+            var zodiacCount = [Group3: Int]()
+            zodiacType.forEach {zodiacType in
+                zodiacCount[zodiacType] = (zodiacCount[zodiacType] ?? 0) + 1}
+            let sortedCount = zodiacCount.sorted { $0.value > $1.value }
+            let zodiacGrup = sortedCount.first!.key
+            resultImage.image = UIImage(named: zodiacGrup.rawValue)
+            resultTitle.text = zodiacGrup.rawValue
+            resultDefinition.text = zodiacGrup.definition
+            
+        default:
+            return
+        }
+
+        
+       
         }
 }

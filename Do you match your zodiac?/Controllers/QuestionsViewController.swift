@@ -62,12 +62,6 @@ class QuestionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         questions = Question.all
-    
-
-        
-        
-        
-       
         updateUI()
     }
     
@@ -199,7 +193,7 @@ class QuestionsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "ResultSegue" else { return }
         let destination = segue.destination as! ResultViewController
-        destination.responses = answersChosen
+        destination.responses = responseAnswer
         destination.grup = questionsGroupIndex
         
     }
