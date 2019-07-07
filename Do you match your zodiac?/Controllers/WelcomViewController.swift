@@ -49,6 +49,6 @@ class WelcomViewController: UIViewController {
     
 
 }
-//был баг в коде - по поводу массивов и рандомных значений, из-за этого выкидывало
+
 
 

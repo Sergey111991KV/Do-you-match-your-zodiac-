@@ -17,7 +17,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var resultDefinition: UILabel!
     
     
-     var responses: [Answer]!
+     var responses: [aaa]!
      var grup: Int!
     
     
