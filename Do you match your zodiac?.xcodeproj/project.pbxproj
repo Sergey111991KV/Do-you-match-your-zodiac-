@@ -106,11 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				1C8FBB1322C7085700C83221 /* Info.plist */,
+				1C810DCE22CC98C6004EC842 /* Models */,
 				1C810DCF22CC9912004EC842 /* Storyboard */,
 				1C810DCC22CC988C004EC842 /* App */,
 				1C8FBB2122C70B7000C83221 /* Controllers */,
 				1C810DCD22CC98AC004EC842 /* Resourse */,
-				1C810DCE22CC98C6004EC842 /* Models */,
 			);
 			path = "Do you match your zodiac?";
 			sourceTree = "<group>";
