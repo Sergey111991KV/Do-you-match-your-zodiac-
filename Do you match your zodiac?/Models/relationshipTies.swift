@@ -36,3 +36,52 @@ enum relationshipTies : String {
     case Air
     case non // тип который не на что не будет влиять
 }
+//extension relationshipTies {
+//    var definition: String {
+//        switch self {
+//            
+//        case .Virgo:
+//            return "Вы любите развлекаться вне дома вместе с людьми, которые вам дороги."
+//            
+//        case .Aquarius:
+//            return "Вы гуляете сами по себе.  Вам не нужна компания, вы цените свободу."
+//            
+//        case .Cancer:
+//            return "Вам нравится всё мягкое.  Вы здоровы и полны энергии."
+//            
+//        case .Capricorn:
+//            return case .common:
+//            <#code#>
+//        case .groupFirst:
+//            <#code#>
+//        case .groupSecond:
+//            <#code#>
+//        case .Aries:
+//            <#code#>
+//        case .Gemini:
+//            <#code#>
+//        case .Leo:
+//            <#code#>
+//        case .Libra:
+//            <#code#>
+//        case .Pisces:
+//            <#code#>
+//        case .Sagittarius:
+//            <#code#>
+//        case .Scorpion:
+//            <#code#>
+//        case .Taurus:
+//            <#code#>
+//        case .Water:
+//            <#code#>
+//        case .Fire:
+//            <#code#>
+//        case .Earth:
+//            <#code#>
+//        case .Air:
+//            <#code#>
+//        case .non:
+//            <#code#>
+//"Мудрость важнее скорости.  Медленный и вдумчивый всегда выигрывает."
+//
+//Ъ

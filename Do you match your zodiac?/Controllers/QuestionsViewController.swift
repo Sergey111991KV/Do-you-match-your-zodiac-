@@ -226,8 +226,8 @@ class QuestionsViewController: UIViewController {
      // MARK: - Actions
     @IBAction func singleButtonPressed(_ sender: UIButton) {
         guard let answerIndex = buttonsSingle.firstIndex(of: sender) else { return }
-        let answer = currentAnswers[answerIndex]
-        answersChosen.append(answer)
+        let answerrss = currentAnswers[answerIndex]
+        answersChosen.append(answerrss)
         nextQuestion()
     }
     

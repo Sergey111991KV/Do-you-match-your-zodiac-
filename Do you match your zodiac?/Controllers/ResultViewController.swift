@@ -26,7 +26,7 @@ class ResultViewController: UIViewController {
         navigationItem.hidesBackButton = true
        resultImage.image = UIImage(named: responses.rawValue)
         resultTitle.text = responses.rawValue
-        print(responses!)
+        
     }
     
 
