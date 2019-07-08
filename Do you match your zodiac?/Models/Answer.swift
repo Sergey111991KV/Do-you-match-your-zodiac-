@@ -12,7 +12,7 @@
 
 struct Answer {
     var text: String
-    var groupAnswer: relationshipTies
+    var relationshipTies: relationshipTies
         
 
     

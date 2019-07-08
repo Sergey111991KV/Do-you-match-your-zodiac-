@@ -435,12 +435,8 @@
                         <outletCollection property="collectionQuestionsImage" destination="DVx-hd-YAS" collectionClass="NSMutableArray" id="b4c-qc-Pyl"/>
                         <outletCollection property="collectionQuestionsImage" destination="HHf-Ad-BZv" collectionClass="NSMutableArray" id="jgz-27-cWZ"/>
                         <outletCollection property="collectionQuestionsImage" destination="4qw-lG-GtD" collectionClass="NSMutableArray" id="xBt-BJ-fDM"/>
-                        <outletCollection property="collectionQuestionsImage" destination="HCB-0e-Qqi" collectionClass="NSMutableArray" id="St4-oV-kuc"/>
-                        <outletCollection property="collectionQuestionsImage" destination="HHf-Ad-BZv" collectionClass="NSMutableArray" id="15B-ox-f6t"/>
-                        <outletCollection property="collectionQuestionsImage" destination="DVx-hd-YAS" collectionClass="NSMutableArray" id="NFy-r7-YO3"/>
                         <outletCollection property="collectionQuestionsImage" destination="HCB-0e-Qqi" collectionClass="NSMutableArray" id="SI8-zE-BEZ"/>
-                        <outletCollection property="collectionQuestionsImage" destination="4qw-lG-GtD" collectionClass="NSMutableArray" id="ZB6-VI-lcb"/>
-                        <segue destination="MAr-9m-gaD" kind="show" identifier="ResultSegue" id="T91-dE-KCy"/>
+                        <segue destination="MAr-9m-gaD" kind="show" identifier="ResultSegue" id="Y9O-f6-qn9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bfy-km-hxL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -461,7 +457,7 @@
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="wWs-Nw-Cdf">
                     <connections>
-                        <action selector="for:" destination="F82-QH-PDY" id="xA9-eC-0Am"/>
+                        <action selector="forthAnswer:" destination="F82-QH-PDY" id="KkB-ee-7U3"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

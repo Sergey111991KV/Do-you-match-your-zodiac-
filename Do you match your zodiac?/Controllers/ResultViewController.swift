@@ -17,65 +17,18 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var resultDefinition: UILabel!
     
     
-     var responses: [aaa]!
-     var grup: Int!
+    var responses: relationshipTies!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-        print(responses.count)
-       calculatAnswer()
-        print(responses.count)
-        
+       resultImage.image = UIImage(named: responses.rawValue)
+        resultTitle.text = responses.rawValue
+        print(responses!)
     }
     
 
-    func calculatAnswer (){
 
-        
-        
-        switch grup {
-        case 1:
-            let zodiacType = responses.map {$0.group1}
-            var zodiacCount = [Group1: Int]()
-            zodiacType.forEach {zodiacType in
-                zodiacCount[zodiacType] = (zodiacCount[zodiacType] ?? 0) + 1}
-            let sortedCount = zodiacCount.sorted { $0.value > $1.value }
-            let zodiacGrup = sortedCount.first!.key
-            resultImage.image = UIImage(named: zodiacGrup.rawValue)
-            resultTitle.text = zodiacGrup.rawValue
-            resultDefinition.text = zodiacGrup.definition
-            
-        case 2:
-            
-            let zodiacType = responses.map {$0.group2}
-            var zodiacCount = [Group2: Int]()
-            zodiacType.forEach {zodiacType in
-                zodiacCount[zodiacType] = (zodiacCount[zodiacType] ?? 0) + 1}
-            let sortedCount = zodiacCount.sorted { $0.value > $1.value }
-            let zodiacGrup = sortedCount.first!.key
-            resultImage.image = UIImage(named: zodiacGrup.rawValue)
-            resultTitle.text = zodiacGrup.rawValue
-            resultDefinition.text = zodiacGrup.definition
-        
-        case 3:
-            
-            let zodiacType = responses.map {$0.group3}
-            var zodiacCount = [Group3: Int]()
-            zodiacType.forEach {zodiacType in
-                zodiacCount[zodiacType] = (zodiacCount[zodiacType] ?? 0) + 1}
-            let sortedCount = zodiacCount.sorted { $0.value > $1.value }
-            let zodiacGrup = sortedCount.first!.key
-            resultImage.image = UIImage(named: zodiacGrup.rawValue)
-            resultTitle.text = zodiacGrup.rawValue
-            resultDefinition.text = zodiacGrup.definition
-            
-        default:
-            return
-        }
-
-        responses.removeAll()
-       
-        }
 }
